@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+		<title>Projekt web Stranica</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="css.css" type="text/css" media="screen" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jquery-ui-personalized-1.5.2.packed.js"></script>
+<script type="text/javascript" src="sprinkle.js"></script>
+<style type="text/css">
+a {color: #2E6194;}
+
+a:link {color: #2E6194;text-decoration: none;}
+
+a:visited {color: #285580;text-decoration: none;}
+
+a:hover {text-decoration: underline;} 
+
+.glossymenu{
+	position: relative;
+	padding: 0 0 0 34px;
+	margin: 0 auto 0 auto;
+	background: url(media/menur_bg.gif) repeat-x; /*tab background image path*/
+	height: 46px;
+	list-style: none;
+}
+
+.glossymenu li{
+	float:left;
+}
+
+.glossymenu li a{
+	float: left;
+	display: block;
+	color:#000;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	padding:0 0 0 16px; /*Padding to accomodate left tab image. Do not change*/
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	cursor: pointer;	
+}
+
+.glossymenu li a b{
+	float: left;
+	display: block;
+	padding: 0 24px 0 8px; /*Padding of menu items*/
+}
+
+.glossymenu li.current a, .glossymenu li a:hover{
+	color: #346870;
+	background: url(media/menur_hover_left.gif) no-repeat; /*left tab image path*/
+	background-position: left;
+}
+
+.glossymenu li.current a b, .glossymenu li a:hover b{
+	color: #fff;
+	background: url(./slike/ca.jpg) no-repeat right top; /*right tab image path*/
+}
+<!--end-->
+
+			.default {
+				font: Arial, Helvetica, sans-serif;
+				font-size: 10pt;
+			}
+			table {
+				font: Arial, Helvetica, sans-serif;
+				font-size: 10pt;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<font face="GulimChe, Arial, Helvetica, sans-serif">
+			
+			
+			
+			<div id="izvan">
+			
+			</div><!--kraj izvan-->
+			
+			<div id="unutar">
+			
+			<table class="1table" border="0" cellpadding="0" cellspacing="0" width="1000">
+			<tbody><tr> 
+				
+					<td colspan="3">
+					
+					<img src="./slike/etfos.jpg" width="250px" height="150px"align="center" alt="">
+					<img src="./slike/5501.jpg" width="748px" height="150px" alt="">
+					
+					</td>
+					
+				</tr>
+				<tr>
+				
+					<td colspan="3" height="30">&nbsp;
+				
+
+			
+			<ul class="glossymenu">
+	<li ><a href="index.html"><b>Pocetna</b></a></li>
+	<li class="current"><a href="literatura.html"><b>Literatura</b></a></li>
+
+	<li ><a href="audio.html"><b>Primjeri</b></a></li>	
+	
+
+</ul>
+				
+
+
+				</td>
+				</tr>
+				<tr> 
+					<td width="32">&nbsp;</td>
+					  
+					<td valign="top" width="100">
+
+	                <br>    
+					<br>    
+					<br>    
+					<br>    
+					<br> 
+					<p class="slicne">Slične Stranice:</p>	<br>
+					
+<div class="gallerycontainer">
+
+<a class="thumbnail" href="http://dosl.zesoi.fer.hr/seminari/1998_1999/vrbanic-ribaric/mpeg1.htm">
+<img src="./slike/8literatura1_min.jpg" width="75px" height="75px" border="0" /><span><img src="./slike/8literatura1.jpg" /> </span></a>
+
+<a class="thumbnail" href="http://www.mpgedit.org/mpgedit/mpeg_format/mpeghdr.htm">
+<img src="./slike/8literatura2.jpg" width="75px" height="75px" border="0" /><span><img src="./slike/8literatura2.jpg" /><br />  </span></a>
+
+
+</div>
+
+
+					    
+				
+
+					</td>
+				
+					<td class="default" valign="top" width="*"> 
+	
+
+
+					 	
+					
+					
+						
+						
+						
+						<br>
+						<table>
+							<tbody><tr valign="bottom">
+								
+								<td align="right" width="1000"><b>
+
+<!--Literatura-->
+<br><br>
+<h3>MPEG-1 Audio</h3>
+ <p> 
+
+
+
+ 
+ 
+ 
+
+
+
+
+ </p>    
+<!--widget-->
+         <div id="tabvanilla" class="widget">
+
+            <ul class="tabnav">
+                <li><a href="#popular">Uvod</a></li>
+                <li><a href="#recent">MPEG 1 audio kompresija</a></li>
+                 <li><a href="#featured">MPEG 1 audio slojevi</a></li>
+            </ul>
+
+            <div id="popular" class="tabdiv">
+      
+	  
+ <ul><li>tri algoritma ("downward compatible")</li></ul>
+ <li>Layer-1, 2 i 3</li>
+ <ul><li>brzina 1.5 Mb/s za video + audio, od toga 0.3 Mb/s za audio</li></ul>
+ <ul><li>podržava 4 moda rada</li></ul>
+ <li>mono</li>
+ <li>dual-mono (npr.dva jezika)</li>
+ <li>stereo</li>
+ <li>uzdrženi stereo (iskorištava korelaciju  u stereo kanalima)</li>
+ <ul><li>radi na 32 do 448 kbps po kanalu</li></ul>
+ <ul><li>uzorkovanje 32, 44.1, 48 kHz</li></ul>
+ <ul><li>stupanj kompresije od 2.7 do 24</li></ul>
+  <ul><li>rade s gubitkom, ali ne osjetilnim (perceptivnim)</li></ul>
+ <li>koristi pojavu frekvencijskog i temporalnog maskiranja</li>
+  <li>s kompresijom 6:1 (za 16 bitni stereo s uzorkovanjem s 48 kHz to je 
+256 kb/s) eksperti ne &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;razlikuju kodirani od originalnog audia</li>
+	  
+	  
+	  
+	  
+ 
+            </div><!--/popular-->
+            
+            <div id="recent" class="tabdiv">
+
+			
+		
+ <ul><li>Metoda:</li></ul>
+ <li>ulaz je podijeljen u 32 frekvencijska podpojasa;</li>
+ <li>na temelju psihoakustičkog modela definira se količina maskiranja u pojedinom pojasu;</li>
+ <li>ako je snaga pojasa ispod praga maskiranja ne kodiraju se uzorci;</li>
+ <li>ako je snaga pojasa iznad praga maskiranja</li> 
+<li>određuje se potreban broj bitova tako da </li>
+<li>kvantizacijski šum pada ispod praga maskiranja;</li>
+		
+		
+            </div><!--/recent-->
+			<div id="featured" class="tabdiv">
+                
+				
+ <ul><li>Layer 1 </ul></li> 
+ <li>pojednostavljena verzija MUSICAM-a</li>
+ <li>jednostavni koderi</li>
+ <li>192 - 256 Kbps po kanalu</li>
+ <li>definirane brzine 32-448 kbps</li>
+ <ul><li>Layer 2 </ul></li> 
+ <li>istovjetan MUSICAM standardu</li>
+  <li>96 do 128 Kbps po kanalu</li>
+ <li>definirane brzine 32-384 Kbps</li>
+ <li>stereo, pribli߮o kvaliteta CD-a</li>
+ <ul><li>Layer 3</ul></li> 
+ <li>kombinacija MUSICAM-a i ASPEC-a (kompr. shema)</li>
+ <li>64 Kbps po kanalu</li>
+ <li>definirane brzine 32-320 Kbps</li>
+ <li>vrlo blizu CD kvaliteti</li>
+ <li>MP3 format je MPEG1 Layer 3 audio format</li>
+				
+            </div><!--featured-->
+        </div><!--end widget-->
+
+<br>
+<!--Kljucni pojmovi-->
+<div class="cente"><table border="0" align="left" cellpadding="5"cellspacing="10">
+  <tr>
+   <th ><a class="anchor" href="literatura.html"> &nbsp;Nazad<img src="./slike/arrow1.gif" width="30px" height="18px" border="0" /></a></th>
+   <th ><a class="anchor" href="#"></a></th>
+    
+	
+   
+  </tr>
+  <tr>
+    <th><a  class="anchor" href="literatura1.html">1.Svojstva audio signala</a></th> 
+    <th><a class="anchor" href="literatura1.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+  <tr>
+    <th><a  class="anchor" href="literatura2.html">2.Digitalizacija govora</a></th> 
+    <th><a class="anchor" href="literatura2.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+  <tr>
+    <th><a  class="anchor" href="literatura3.html">3.Dinamički raspon ljudskog sluha</a></th> 
+    <th><a class="anchor" href="literatura3.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+  <tr>
+    <th><a  class="anchor" href="literatura4.html">4.CD audio kodiranje</a></th> 
+    <th><a class="anchor" href="literatura4.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+<tr>
+    <th><a  class="anchor" href="literatura5.html">5.DVD audio kodiranje</a></th> 
+    <th><a class="anchor" href="literatura5.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+  <tr>
+    <th><a  class="anchor" href="literatura6.html">6.Drugi audio standardi</a></th> 
+    <th><a class="anchor" href="literatura6.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+   <tr>
+    <th><a  class="anchor" href="literatura7.html">7.Tehnike za kodiranje govora</a></th> 
+    <th><a class="anchor" href="literatura7.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+  <tr>
+    <th><a  class="anchor" href="literatura9.html">9.MPEG-1 audio layers</a></th> 
+    <th><a class="anchor" href="literatura9.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+</table></div>
+	<!--Kraj kljucnih pojmova-->
+								
+			<hr>
+<h4 class="link" align="center">Link na službenu web stranicu kolegija <a href="http://www.etfos.hr/?smjer=inf&predmet=SR601&strucni_studij&strucni=5">&nbsp;Multimedijska tehnika</a>&nbsp;kolegiju možete pristupiti putem moodle-a <a href="http://moodle.etfos.hr/">&nbsp;ovdje</a></h4>
+     <hr>
+				
+
+<!-- Kraj literature -->				
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					
+								</b></td></tr>
+					
+			</tbody></table>
+			</div><!--kraj unutar-->
+		</font>
+
+
+</body></html>

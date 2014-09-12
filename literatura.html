@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title>Projekt web Stranica</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="css.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="ddaccordion.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jquery-ui-personalized-1.5.2.packed.js"></script>
+<script type="text/javascript" src="sprinkle.js"></script>
+
+<style type="text/css">
+.mypets{ /*header of 1st demo*/
+cursor: hand;
+cursor: pointer;
+padding: 2px 5px;
+border: 1px solid gray;
+background: #E1E1E1;
+}
+
+.openpet{ /*class added to contents of 1st demo when they are open*/
+background: yellow;
+}
+
+.technology{ /*header of 2nd demo*/
+cursor: hand;
+cursor: pointer;
+font: bold 14px Verdana;
+margin: 10px 0;
+}
+
+
+.openlanguage{ /*class added to contents of 2nd demo when they are open*/
+color: green;
+}
+
+.closedlanguage{ /*class added to contents of 2nd demo when they are closed*/
+color: red;
+}
+
+
+
+
+
+
+a {color: #2E6194;}
+
+a:link {color: #2E6194;text-decoration: none;}
+
+a:visited {color: #285580;text-decoration: none;}
+
+a:hover {text-decoration: underline;} 
+
+.glossymenu{
+	position: relative;
+	padding: 0 0 0 34px;
+	margin: 0 auto 0 auto;
+	background: url(media/menur_bg.gif) repeat-x; /*tab background image path*/
+	height: 46px;
+	list-style: none;
+}
+
+.glossymenu li{
+	float:left;
+}
+
+.glossymenu li a{
+	float: left;
+	display: block;
+	color:#000;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	padding:0 0 0 16px; /*Padding to accomodate left tab image. Do not change*/
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	cursor: pointer;	
+}
+
+.glossymenu li a b{
+	float: left;
+	display: block;
+	padding: 0 24px 0 8px; /*Padding of menu items*/
+}
+
+.glossymenu li.current a, .glossymenu li a:hover{
+	color: #346870;
+	background: url(media/menur_hover_left.gif) no-repeat; /*left tab image path*/
+	background-position: left;
+}
+
+.glossymenu li.current a b, .glossymenu li a:hover b{
+	color: #fff;
+	background: url(./slike/ca.jpg) no-repeat right top; /*right tab image path*/
+}
+<!--end-->
+
+			.default {
+				font: Arial, Helvetica, sans-serif;
+				font-size: 10pt;
+			}
+			table {
+				font: Arial, Helvetica, sans-serif;
+				font-size: 10pt;
+			}
+		</style>
+		<script type="text/javascript">
+
+//Initialize first demo:
+ddaccordion.init({
+	headerclass: "mypets", //Shared CSS class name of headers group
+	contentclass: "thepet", //Shared CSS class name of contents group
+	revealtype: "mouseover", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
+	defaultexpanded: [0], //index of content(s) open by default [index1, index2, etc]. [] denotes no content.
+	onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: true, //persist state of opened contents within browser session?
+	toggleclass: ["", "openpet"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["none", "", ""], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+	oninit:function(expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+
+//Initialize 2nd demo:
+ddaccordion.init({
+	headerclass: "technology", //Shared CSS class name of headers group
+	contentclass: "thelanguage", //Shared CSS class name of contents group
+	revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: false, //Collapse previous content (so only one open at any time)? true/false 
+	defaultexpanded: [], //index of content(s) open by default [index1, index2, etc]. [] denotes no content.
+	onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: false, //persist state of opened contents within browser session?
+	toggleclass: ["closedlanguage", "openlanguage"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["prefix", "<img src='http://i13.tinypic.com/80mxwlz.gif' style='width:13px; height:13px' /> ", "<img src='http://i18.tinypic.com/6tpc4td.gif' style='width:13px; height:13px' /> "], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+	oninit:function(expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+
+</script>
+		
+	</head>
+
+	<body>
+		<font face="GulimChe, Arial, Helvetica, sans-serif">
+			
+			
+			
+			<div id="izvan">
+			
+			</div><!--kraj izvan-->
+			
+			<div id="unutar">
+			
+			<table class="1table" border="0" cellpadding="0" cellspacing="0" width="1000">
+			<tbody><tr> 
+				
+					<td colspan="3">
+					
+					<img src="./slike/etfos.jpg" width="250px" height="150px"align="center" alt="">
+					<img src="./slike/5501.jpg" width="748px" height="150px" alt="">
+					
+					</td>
+					
+				</tr>
+				<tr>
+				
+					<td colspan="3" height="30">&nbsp;
+				
+
+			
+			<ul class="glossymenu">
+	<li ><a href="index.html"><b>Pocetna</b></a></li>
+	<li class="current"><a href="literatura.html"><b>Literatura</b></a></li>
+
+	<li ><a href="audio.html"><b>Primjeri</b></a></li>	
+
+
+</ul>
+				
+
+
+				</td>
+				</tr>
+				<tr> 
+					<td width="32">&nbsp;</td>
+					  
+					<td valign="top" width="100">
+
+	                <br>    
+					<br>    
+					<br>    
+					<br>    
+					<br> 
+					
+				<p class="slicne">Slične Stranice:</p>	<br>	
+<div class="gallerycontainer">
+
+<a class="thumbnail" href="http://lame.sourceforge.net/doc/vol5num2art3.pdf">
+<img src="./slike/0literatura1_min.jpg" width="75px" height="75px" border="0" /><span><img src="./slike/0literatura1.jpg" /> </span></a>
+
+<a class="thumbnail" href="http://www.math.kent.edu/~reichel/courses/intr.num.comp.2/lecture14/lecture14.pdf">
+<img src="./slike/0literatura2_min.jpg" width="75px" height="75px" border="0" /><span><img src="./slike/0literatura2.jpg" /><br />  </span></a>
+
+
+
+</div>
+
+
+					    
+				
+
+					</td>
+				
+					<td class="default" valign="top" width="*"> 
+	
+
+
+					 	
+					
+					
+						
+						
+						
+						<br>
+						<table>
+							<tbody><tr valign="bottom">
+								
+								<td align="right" width="1000"><b>
+
+<!--Literatura-->
+ <h2 align="center">Digitalizacija i kompresija zvuka</h2>
+
+ 
+ 
+ 
+					 
+<br>
+<!--Kljucni pojmovi-->
+<!--widget-->
+         <div id="tabvanilla" class="widget">
+
+            <ul class="tabnav">
+                <li><a href="#popular">Uvod</a></li>
+                <li><a href="#recent">Digitalni zvuk - primjene</a></li>
+                
+            </ul>
+
+            <div id="popular" class="tabdiv">
+                 
+<ul align="justify"><li> Audio signal</li>
+ <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   govor</p>
+ <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   glazba (i ostalo)</p>
+            </div><!--/popular-->
+            
+            <div id="recent" class="tabdiv">
+<ul>                    
+  <li>Telefonija</li>
+  <li>preko IP</li>
+  <li>integracija</li>
+  <li>bežični sustavi</li>
+  <li>Audio difuzija (broadcasting) (radio)</li>
+  <li>audio on demand</li>
+  <li>Audio konferencije</li>
+  <li>CD i DVD pohrana</li>
+  <li>video + pripadajući audio</li> 
+</ul>
+            </div><!--/recent-->
+        </div><!--end widget-->
+
+		
+		
+		
+		<div class="cente"><table border="0" align="left" cellpadding="5"cellspacing="10">
+  <tr>
+    
+	<th ><a class="anchor" href="literatura1.html">1.Svojstva audio signala</a></th>
+    <th ><a class="anchor" href="literatura1.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+  
+  <tr>
+    <th><a  class="anchor" href="literatura2.html">2.Digitalizacija govora</a></th> 
+    <th><a class="anchor" href="literatura2.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+  
+  <tr>
+    <th><a  class="anchor" href="literatura3.html">3.Dinamički raspon ljudskog sluha</a></th> 
+    <th><a class="anchor" href="literatura3.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+  <tr>
+    <th><a  class="anchor" href="literatura4.html">4.CD audio kodiranje</a></th> 
+    <th><a class="anchor" href="literatura4.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+  <tr>
+    <th><a  class="anchor" href="literatura5.html">5.DVD audio kodiranje</a></th> 
+    <th><a class="anchor" href="literatura5.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+  <tr>
+    <th><a  class="anchor" href="literatura6.html">6.Drugi audio standardi</a></th> 
+    <th><a class="anchor" href="literatura6.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+  <tr>
+    <th><a  class="anchor" href="literatura7.html">7.Tehnike za kodiranje govora</a></th> 
+    <th><a class="anchor" href="literatura7.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+  <tr>
+    <th><a  class="anchor" href="literatura8.html">8.MPEG-1 audio</a></th> 
+    <th><a class="anchor" href="literatura8.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr>
+   <tr>
+    <th><a  class="anchor" href="literatura9.html">9.MPEG-1 audio layers</a></th> 
+    <th><a class="anchor" href="literatura9.html"><img src="./slike/arrow.gif" width="30px" height="18px" border="0" /></a></th>
+  </tr></div>
+
+
+
+</table></div>
+	<!--Kraj kljucnih pojmova-->
+								
+
+			<hr>
+<h4 class="link" align="center">Link na službenu web stranicu kolegija <a href="http://www.etfos.hr/?smjer=inf&predmet=SR601&strucni_studij&strucni=5">&nbsp;Multimedijska tehnika</a>&nbsp;kolegiju možete pristupiti putem moodle-a <a href="http://moodle.etfos.hr/">&nbsp;ovdje</a></h4>
+     <hr>	
+
+<!-- Kraj literature -->				
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+				
+					
+								</b></td></tr>
+					
+			</tbody></table>
+			</div><!--kraj unutar-->
+		</font>
+	
+
+</body></html>

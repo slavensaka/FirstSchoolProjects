@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+		<title>Projekt web Stranica</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="css.css" type="text/css" media="screen" />
+<!--Skripte za zvuk -->		
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery.jplayer.min.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css/jplayer.blue.monday.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/main.css" type="text/css" media="all" />
+<!--Kraj skripta za zvuk-->		
+
+
+<!-- jQuery (required) -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+	<!-- Anything Slider optional plugins -->
+	<script type="text/javascript" src="js/jquery.easing.1.2.js"></script>
+	<!-- http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js -->
+	<script type="text/javascript" src="js/swfobject.js"></script>
+
+	<!-- Demo stuff -->
+	<link rel="stylesheet" href="css/page.css" type="text/css" media="screen" />
+
+	<!-- Anything Slider -->
+	<link rel="stylesheet" href="css/anythingslider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+	<script type="text/javascript" src="js/jquery.anythingslider.js"></script>
+
+	<script type="text/javascript">
+		// Demo functions
+		// **************
+		$(function(){
+
+			// External Link with callback function
+			$("#slide-jump").click(function(){
+				$('#slider2').anythingSlider(4, function(slider){ /* alert('Now on page ' + slider.currentPage); */ });
+				return false;
+			});
+
+			// External Link
+			$("a.muppet").click(function(){
+				$('#slider1').anythingSlider(5);
+				$(document).scrollTop(0);
+				return false;
+			});
+
+			// Report Events to console & features list
+			$('#slider1, #slider2').bind('before_initialize initialized swf_completed slideshow_start slideshow_stop slideshow_paused slideshow_unpaused slide_init slide_begin slide_complete', function(e, slider){
+				// show object ID + event (e.g. "slider1: slide_begin")
+				var txt = slider.$el[0].id + ': ' + e.type + ', now on panel #' + slider.currentPage;
+				$('#status').text(txt);
+				if (window.console && window.console.firebug){ console.debug(txt); } // added window.console.firebug to make this work in Opera
+			});
+
+			// Theme Selector (This is really for demo purposes only)
+			var themes = ['minimalist-round','minimalist-square','metallic','construction','cs-portfolio'];
+			$('#currentTheme').change(function(){
+				var theme = $(this).val();
+				if (!$('link[href*=' + theme + ']').length) {
+					$('body').append('<link rel="stylesheet" href="css/theme-' + theme + '.css" type="text/css" media="screen" />');
+				}
+				$('#slider1').closest('div.anythingSlider')
+					.removeClass( $.map(themes, function(t){ return 'anythingSlider-' + t; }).join(' ') )
+					.addClass('anythingSlider-' + theme);
+			});
+
+			// Add a slide
+			var imageNumber = 1;
+			$('button.add').click(function(){
+				$('#slider1')
+					.append('<li><img src="images/slide-tele-' + (++imageNumber%2 + 1)  + '.jpg" alt="" /></li>')
+					.anythingSlider(); // update the slider
+			});
+			$('button.remove').click(function(){
+				if ($('#slider1').data('AnythingSlider').pages > 1) {
+					$('#slider1 > li:not(.cloned):last').remove();
+					$('#slider1').anythingSlider(); // update the slider
+				}
+			});
+
+		});
+	</script>
+
+	<script type="text/javascript">
+		// Set up Sliders
+		// **************
+		$(function(){
+
+			$('#slider1').anythingSlider({
+				startStopped    : true, // If autoPlay is on, this can force it to start stopped
+				width           : 800,   // Override the default CSS width
+				theme           : 'default',
+				easing: 'easeInOutBack',
+//				autoPlayLocked  : true,  // If true, user changing slides will not stop the slideshow
+//				resumeDelay     : 10000, // Resume slideshow after user interaction, only if autoplayLocked is true (in milliseconds).
+				onSlideComplete : function(slider){
+					// alert('Welcome to Slide #' + slider.currentPage);
+				}
+			});
+
+			$('#slider2').anythingSlider({
+				width               : 600,   // if resizeContent is false, this is the default width if panel size is not defined
+				height              : 350,   // if resizeContent is false, this is the default height if panel size is not defined
+				resizeContents      : false, // If true, solitary images/objects in the panel will expand to fit the viewport
+				startStopped        : true,  // If autoPlay is on, this can force it to start stopped
+				navigationFormatter : function(index, panel){ // Format navigation labels with text
+					return ['Recipe', 'Quote', 'Image', 'Quote #2', 'Image #2'][index - 1];
+				}
+			});
+
+		});
+	</script>
+
+
+		
+<style type="text/css">
+
+a:link {text-decoration: none;} 
+a:visited {text-decoration: none;}
+a:hover {text-decoration: underline;} 
+.glossymenu{
+	position: relative;
+	padding: 0 0 0 34px;
+	margin: 0 auto 0 auto;
+	background: url(media/menur_bg.gif) repeat-x; /*tab background image path*/
+	height: 46px;
+	list-style: none;
+}
+
+.glossymenu li{
+	float:left;
+}
+
+.glossymenu li a{
+	float: left;
+	display: block;
+	color:#000;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	padding:0 0 0 16px; /*Padding to accomodate left tab image. Do not change*/
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	cursor: pointer;	
+}
+
+.glossymenu li a b{
+	float: left;
+	display: block;
+	padding: 0 24px 0 8px; /*Padding of menu items*/
+}
+
+.glossymenu li.current a, .glossymenu li a:hover{
+	color: #346870;
+	background: url(media/menur_hover_left.gif) no-repeat; /*left tab image path*/
+	background-position: left;
+}
+
+.glossymenu li.current a b, .glossymenu li a:hover b{
+	color: #fff;
+	background: url(./slike/ca.jpg) no-repeat right top; /*right tab image path*/
+}
+<!--end-->
+
+			.default {
+				font: Arial, Helvetica, sans-serif;
+				font-size: 10pt;
+			}
+			table {
+				font: Arial, Helvetica, sans-serif;
+				font-size: 10pt;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<font face="GulimChe, Arial, Helvetica, sans-serif">
+			
+			
+			
+			<div id="izvan">
+			
+			</div><!--kraj izvan-->
+			
+			<div id="unutar">
+			
+			<table class="1table" border="0" cellpadding="0" cellspacing="0" width="1000">
+			<tbody><tr> 
+				
+					<td colspan="3">
+					
+					<img src="./slike/etfos.jpg" width="250px" height="150px"align="center" alt="">
+					<img src="./slike/5501.jpg" width="748px" height="150px" alt="">
+					
+					</td>
+					
+				</tr>
+				<tr>
+				
+					<td colspan="3" height="30">&nbsp;
+				
+
+			
+			<ul class="glossymenu">
+			
+	<li ><a href="index.html"><b>Pocetna</b></a></li>
+	<li><a href="literatura.html"><b>Literatura</b></a></li>
+
+	<li class="current"><a href="audio.html"><b>Primjeri</b></a></li>	
+		
+
+             
+			</ul>
+				
+
+
+				</td>
+				</tr>
+				<tr> 
+					<td width="32">&nbsp;</td>
+					  
+					<td valign="top" width="100">
+
+
+
+
+					<br>  
+					<br>    
+					<br>    
+					<br>    
+					<br> 
+					
+				<p class="slicne">Slične Stranice:</p>	<br>	
+<div class="gallerycontainer">
+
+<a class="thumbnail" href="http://pvprm.zesoi.fer.hr/1999-00-web/1999-00-seminari/aomahic/vjezba3.html">
+<img src="./slike/1audio1_min.jpg" width="75px" height="75px" border="0" /><span><img src="./slike/1audio1.jpg" /> </span></a>
+
+<a class="thumbnail" href="http://ahyco.ffri.hr/seminari2005/MP3/multi/2_kompresija.pdf">
+<img src="./slike/1audio2_min.jpg" width="75px" height="75px" border="0" /><span><img src="./slike/1audio2.jpg" /><br />  </span></a>
+
+<a class="thumbnail" href="http://en.wikipedia.org/wiki/DTS_%28sound_system%29">
+<img src="./slike/1audio3_min.jpg" width="75px" height="75px" border="0" /><span><img src="./slike/1audio3.jpg" /> </span></a>
+
+</div>
+
+					</td>
+					<td class="default" border="0" valign="top" width="*"> 
+						
+<br>
+						<table border="1">
+							<tbody><tr valign="bottom">
+								
+								<td align="right" width="1000"><b>
+						<h2 align="center">Digitalizacija glazbe</h2>
+					<h3>Primjer prvi</h3>
+				<!--Zvuk audio-->
+					<br> 
+					
+<br><br>	<embed   cellpadding="0"cellspacing="0" width="260" height="15"border="0"align="left"src=media/glazba14.wav autostart=false>&nbsp;&nbsp; Glazba .wav 705kbps original
+<br><br>	<embed   cellpadding="0"cellspacing="0" width="260" height="15"border="0"align="left"src=media/Glazba_PCM_8_8.wav autostart=false> &nbsp;&nbsp;Glazba PCM 8kHz uzorkovanja, 8 bita protoka
+<br><br>	<embed   cellpadding="0"cellspacing="0" width="260" height="15"border="0"align="left"src=media/Glazba_PCM_8_16.wav autostart=false>&nbsp;&nbsp; Glazba PCM 8kHz uzorkovanja, 16 bita protoka
+<br><br>	<embed   cellpadding="0"cellspacing="0" width="260" height="15"border="0"align="left"src=media/Glazba_MPEG_8_16.wav autostart=false> &nbsp;&nbsp;Glazba MPEG 8kHz uzorkovanja, 16 bita protoka
+<br><br>	<embed   cellpadding="0"cellspacing="0" width="260" height="15"border="0"align="left"src=media/Glazba_GSM_8_2.wav autostart=false> &nbsp;&nbsp;Glazba GSM 8kHz uzorkovanja, 2 bita protoka
+<br><br>	<embed   cellpadding="0"cellspacing="0" width="260" height="15"border="0"align="left"src=media/Glazba_ADPCM_8_4.wav autostart=false>&nbsp;&nbsp; Glazba ADPCM 8kHz uzorkovanja, 4 bita protoka
+<br><br>	<embed   cellpadding="0"cellspacing="0" width="260" height="15"border="0"align="left"src=media/Glazba_Alaw_8_8.wav autostart=false> &nbsp;&nbsp;Glazba Alaw 8kHz uzorkovanja, 8 bita protoka
+					
+						<!--kraj zvuka audio-->	
+			<br><br><br>	
+			<h3>Primjer drugi</h3>
+			<br><br><br><br>
+			<!-- AnythingSlider #1 -->
+			<ul id="slider1">
+
+				<li>	<img src="slike/2literatura1.jpg" alt="" width="400px" height="350px" style=" margin: 1 1 2px 10px;" />
+						<h3 align="center">Digitalizacija zvuka</h3>
+						<br><br><br><br><h4>3 koraka:</h4>
+						<ul><br><br>
+						<h4>	Uzorkovanje</h4><br><br>
+						<h4>	Kvantiziranje</h4><br><br>
+							<h4>Kodiranje</h4><br><br>
+						</ul></li>
+
+						
+						
+		<li class="panel5">
+					<div class="textSlide">
+					<span class="rightside" style="padding-right: 50px;"><object width="500" height="325">
+					</object><iframe title="YouTube video player" width="480" height="390" src="http://www.youtube.com/embed/F3-BdSYyOkI" frameborder="0" allowfullscreen></iframe></span>
+						
+						
+						<ul>
+							<h4>DTS</h4>
+							<h4>Digital Theater Systems</h4>
+							
+						</ul>
+					</div>
+				</li>
+		
+		<li><iframe title="YouTube video player" width="480" height="390" src="http://www.youtube.com/embed/MHCjdTUt75k" frameborder="0" allowfullscreen></iframe></li>
+
+		<li><iframe title="YouTube video player" width="480" height="390" src="http://www.youtube.com/embed/_C-fmX4GiNg" frameborder="0" allowfullscreen></iframe> </li>
+				
+		<li><iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/IpfPQU4hnL0" frameborder="0" allowfullscreen></iframe></li>
+			</ul>  <!-- END AnythingSlider #1 -->
+						
+						
+						
+			
+						<div align="center"> 
+						
+						<table border="0" cellpadding="2" cellspacing="0">
+						
+									
+							
+
+
+		
+									
+									
+									
+									
+						</table>
+						</div><br><!--razmak-->
+						<br><br><br><br>
+						<br><br><br><br>	<hr><br>
+<h4 class="link" align="center">Link na službenu web stranicu kolegija <a href="http://www.etfos.hr/?smjer=inf&predmet=SR601&strucni_studij&strucni=5">&nbsp;Multimedijska tehnika</a>&nbsp;kolegiju možete pristupiti putem moodle-a <a href="http://moodle.etfos.hr/">&nbsp;ovdje</a></h4>
+     <br><hr>
+						
+						
+						<table>
+							<tbody><tr valign="bottom">
+								
+								<td align="right" width="1000"><b>
+
+		
+						
+			
+	
+					
+					
+								</b></td></tr>
+					
+			</tbody></table>
+			</div><!--kraj unutar-->
+			
+					
+		</font>
+		
+
+
+</body></html>

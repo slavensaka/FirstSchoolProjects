@@ -1,0 +1,212 @@
+p.slicne{
+color:black;
+text-shadow: 0px 0px 2px red ;
+	font-size:14px;
+	font-family:times new roman, arial, helvetica;
+text-decoration:italic;
+font-weight:bold;
+}
+
+table  {
+
+
+	
+	color: black;
+	
+background:url(./slike/wea.jpg);
+	
+}
+h3 {
+color:red;
+}
+h2{
+color:blue;
+}
+h4{
+font-size: 10pt;
+	color:#000066;
+	font-family:times new roman, arial, helvetica;
+	font-size:15px;
+	/*text-align:left;
+     text-align:right
+     text-align:center*/
+	 text-align:center;
+    
+    text-shadow: 0px 2px 2px red ;
+}
+h4 a {
+color:green;
+}
+
+div  {
+ /*background:url(orange1.jpg);*/
+   background: black  url(./slike/wew.jpg)  fixed ;
+ color:black;
+}  
+
+img {
+float:left;
+}
+.photo {
+ background:#333333;
+}
+/* ovo je za slike studenata */
+.pics {  
+    height:  232px;  
+    width:   232px;  
+    padding: 0;  
+    margin:  0;  
+} 
+ 
+.pics img {  
+    padding: 15px;  
+    border:  1px solid #ccc;  
+    background-color: #eee;  
+    width:  200px; 
+    height: 200px; 
+    top:  0; 
+    left: 0 
+} 
+.default td { /* literatura css */
+				
+	font-size: 10pt;
+	color:#000066;
+	font-family:times new roman, arial, helvetica;
+	font-size:15px;
+	/*text-align:left;
+     text-align:right
+     text-align:center*/
+    text-align:justify;
+    text-shadow: 2px 2px 2px white ;
+			padding-top:0px; 
+	padding-right:50px; 
+	padding-bottom:0px; 
+	padding-left:50px; 
+			
+}
+ a.anchor  {
+
+font-size: 10pt;
+	color:blue;
+	font-family:times new roman, arial, helvetica;
+	font-size:15px;
+	/*text-align:left;
+     text-align:right
+     text-align:center*/
+    text-align:left;
+    text-shadow: 2px 2px 2px white ;
+
+}	
+div.cente{
+    text-align: left;
+}
+
+div.cente table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+		
+			table {
+				
+				font-size: 10pt;
+			}
+			/*end literatura css */
+
+/* slides styling */
+
+.photo {width:635px; text-align:left; position:relative; margin:0 auto;}
+
+.photo ul.topic {padding:0; margin:0; list-style:none; width:635px; height:auto; position:relative; z-index:10;}
+
+.photo ul.topic li {display:block; width:125px; height:31px; float:left;}
+.photo ul.topic li a.set {display:block; font-size:11px; width:124px; height:30px; text-align:center; line-height:30px; color:#000; text-decoration:none; border:1px solid #fff; border-width:1px 1px 0 0; background:#ccc; font-family:verdana, arial, sans-serif;}
+
+.photo ul.topic li a ul, 
+.photo ul.topic li ul 
+{display:none;}
+
+.photo ul.topic li.active a
+{color:#000; background:#bbb;}
+
+.photo ul.topic li a:hover,
+.photo ul.topic li:hover a
+{color:#fff; background:#aaa;}
+
+.photo ul.topic li.active ul
+{display:block; position:absolute; left:0; top:31px; list-style:none; padding:0; margin:0; height:375px; background:#ddd; width:464px; padding:40px 60px; border:20px solid #bbb; z-index:1;}
+
+.photo ul.topic li a:hover ul, 
+.photo ul.topic li:hover ul
+{display:block; position:absolute; left:0; top:31px; list-style:none; padding:0; margin:0; height:375px; background:#ddd; width:464px; padding:40px 60px; border:20px solid #aaa; z-index:100;}
+
+.photo ul.topic li ul li
+{display:inline; width:112px; height:87px; float:left; border:1px solid #fff; margin:1px;}
+
+.photo ul.topic li ul li a
+{display:block; width:110px; height:85px; cursor:default; float:left; text-decoration:none; background:#444; border:1px solid #888;}
+
+.photo ul.topic li ul li a img
+{display:block; width:100px; height:75px; border:5px solid #eee;}
+
+.photo ul.topic li a:hover ul li a:hover, 
+.photo ul.topic li:hover ul li a:hover 
+{white-space:normal; position:relative;}
+
+.photo ul.topic li a:hover ul li a:hover img, 
+.photo ul.topic li:hover ul li a:hover img 
+{position:absolute; left:-50px; top:-32px; width:200px; height:150px; border-color:#fff;}
+
+
+			.default {
+				font: Arial, Helvetica, sans-serif;
+				font-size: 10pt;
+			}
+			table {
+				font: Arial, Helvetica, sans-serif;
+				font-size: 10pt;
+				}
+				
+/* na lijevoj strani slike povecanje */
+	.gallerycontainer{
+position: relative;
+/*Add a height attribute and set to largest image's height to prevent overlaying*/
+}
+
+.thumbnail img{
+border: 1px solid white;
+margin: 0 5px 5px 0;
+}
+
+.thumbnail:hover{
+background-color: transparent;
+}
+
+.thumbnail:hover img{
+border: 1px solid blue;
+}
+
+.thumbnail span{ /*CSS for enlarged image*/
+position: absolute;
+background-color: lightyellow;
+padding: 5px;
+left: -1000px;
+border: 1px dashed gray;
+visibility: hidden;
+color: black;
+text-decoration: none;
+}
+
+.thumbnail span img{ /*CSS for enlarged image*/
+border-width: 0;
+padding: 2px;
+}
+
+.thumbnail:hover span{ /*CSS for enlarged image*/
+visibility: visible;
+top: 0;
+left: 230px; /*position where enlarged image should offset horizontally */
+z-index: 50;
+}
+/*kraj lijeva strana slike povecanje*/			
